@@ -24,11 +24,11 @@ RUN add-apt-repository multiverse && \
 COPY entrypoint.sh /
 ENTRYPOINT /entrypoint.sh
 
-# Copy templates
-ADD files /home/steam/files
-
 # Add a steam user
 RUN useradd -m steam
 
 # Rest should be executed as the steam user
 USER steam
+
+# Copy templates
+ADD files /home/steam/files
