@@ -20,20 +20,20 @@ RUN add-apt-repository multiverse && \
   apt-get update && \
   apt-get install -y lib32gcc1 lib32stdc++6 steamcmd
 
-# Add the entrypoint
-COPY entrypoint.sh /
-COPY update_csgo.sh /usr/local/bin/
-
-ENTRYPOINT /entrypoint.sh
-
 # Add a steam user
 RUN useradd -m steam
 
 # Rest should be executed as the steam user
 USER steam
 
+# Install CS:GO
+COPY update_csgo.sh /usr/local/bin/
+RUN update_csgo.sh
+
+# Add the entrypoint
+COPY entrypoint.sh /
+
+ENTRYPOINT /entrypoint.sh
+
 # Copy templates
 ADD files /home/steam/files
-
-# Install CS:GO
-RUN update_csgo.sh
