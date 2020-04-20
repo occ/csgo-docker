@@ -17,7 +17,7 @@ do
   expanded_string=$(eval "echo \"${template_string}\"")
   template_dest=$(basename $cfg_template .tmpl)
 
-  echo $expanded_string > ${CSGO_PATH}/csgo/cfg/$template_dest
+  echo "$expanded_string" > ${CSGO_PATH}/csgo/cfg/$template_dest
 done
 
 echo "*** Starting the server"
