@@ -22,6 +22,8 @@ RUN add-apt-repository multiverse && \
 
 # Add the entrypoint
 COPY entrypoint.sh /
+COPY update_csgo.sh /use/local/bin/
+
 ENTRYPOINT /entrypoint.sh
 
 # Add a steam user
@@ -32,3 +34,6 @@ USER steam
 
 # Copy templates
 ADD files /home/steam/files
+
+# Install CS:GO
+RUN update_csgo.sh

@@ -6,8 +6,7 @@ set -u
 
 CSGO_PATH="${HOME}/csgo-ds"
 
-echo "*** Updating CS:GO"
-/usr/games/steamcmd +login anonymous +force_install_dir $CSGO_PATH +app_update 740 +quit
+update_csgo.sh
 
 echo "*** Done updating. Generating configuration files"
 
