@@ -22,7 +22,7 @@ RUN add-apt-repository multiverse && \
 
 # Add the entrypoint
 COPY entrypoint.sh /
-COPY update_csgo.sh /use/local/bin/
+COPY update_csgo.sh /usr/local/bin/
 
 ENTRYPOINT /entrypoint.sh
 
