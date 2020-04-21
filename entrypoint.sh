@@ -24,4 +24,5 @@ echo "*** Starting the server"
 cd ${CSGO_PATH}
 
 ./srcds_run -game csgo -autoupdate -console -usercon \
-  +sv_setsteamaccount ${CSGO_GSLT_TOKEN} -net_port_try 1
+  +sv_setsteamaccount ${CSGO_GSLT_TOKEN} -net_port_try 1 \
+  +ip 0.0.0.0
