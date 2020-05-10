@@ -19,6 +19,10 @@ do
   echo "$expanded_string" > ${CSGO_PATH}/csgo/cfg/$template_dest
 done
 
+echo "*** Done generating configuration files. Coping custom maps"
+
+cp -R files/custom_maps ${CSGO_PATH}/csgo/maps
+
 echo "*** Starting the server"
 
 cd ${CSGO_PATH}
