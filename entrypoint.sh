@@ -21,7 +21,7 @@ done
 
 echo "*** Done generating configuration files. Copying custom maps"
 
-cp -R files/custom_maps ${CSGO_PATH}/csgo/maps
+cp -R ${HOME}/files/custom_maps/* ${CSGO_PATH}/csgo/maps
 
 echo "*** Starting the server"
 
